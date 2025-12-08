@@ -18,7 +18,8 @@ The web interface consists of a FastAPI backend and a Vue.js frontend.
 
 1.  **Start the Backend API**:
     ```bash
-    uv run -m backend.app
+    pip install -r requirements.txt
+    python -m backend.app
     ```
     The API will run at `http://0.0.0.0:8000`.
 
@@ -36,7 +37,8 @@ The web interface consists of a FastAPI backend and a Vue.js frontend.
 To run the standalone CLI tool:
 
 ```bash
-uv run main.py
+pip install -r requirements.txt
+python main.py
 ```
 Follow the prompts to enter the URL and filename.
 
