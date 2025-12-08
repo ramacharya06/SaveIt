@@ -1,10 +1,12 @@
 [project]
 name = "image-downloader"
 version = "0.1.0"
-description = "Add your description here"
+description = "A versatile utility to download any file from the internet."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "fastapi>=0.124.0",
     "requests>=2.32.5",
     "urllib3>=2.5.0",
+    "uvicorn>=0.38.0",
 ]

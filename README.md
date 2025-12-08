@@ -1,47 +1,66 @@
-# Image Downloader
+# Save It
 
-A simple yet versatile Python utility that allows you to download images and other files from the internet. The program automatically detects the file type from the Content-Type header and saves it with the appropriate extension.
+A versatile utility that allows you to download images and other files from the internet. It provides both a Command-Line Interface (CLI) and a modern Web Interface.
 
 ## Features
 
-- Downloads files from any URL
-- Automatically detects file type from Content-Type header
-- Saves files with correct extensions
-- Interactive command-line interface
-- Supports various file formats (jpg, jpeg, png, webp, svg, etc.)
+- **Web Interface**: Modern Vue.js frontend with PrimeVue components.
+- **REST API**: Fast, typed backend using FastAPI.
+- **CLI Mode**: Interactive command-line tool.
+- **Auto-Detection**: Automatically detects file types from Content-Type headers.
+- **Formats**: Supports jpg, png, webp, svg, etc.
 
 ## How to Use
 
-1. Run the program:
-   ```bash
-   python main.py
-   uv init .
-   uv run main.py
-   ```
+### Web Interface (Recommended)
 
-2. When prompted:
-   - Enter the URL of the file you want to download
-   - Enter the desired filename (without extension)
-   - Press Enter to download another file or 'q' to quit
+The web interface consists of a FastAPI backend and a Vue.js frontend.
+
+1.  **Start the Backend API**:
+    ```bash
+    uv run -m backend.app
+    ```
+    The API will run at `http://0.0.0.0:8000`.
+
+2.  **Start the Frontend**:
+    Open a new terminal window:
+    ```bash
+    cd frontend
+    npm install
+    npm run dev
+    ```
+    Open the URL shown (usually `http://localhost:5173`) in your browser.
+
+### Command Line Interface
+
+To run the standalone CLI tool:
+
+```bash
+uv run main.py
+```
+Follow the prompts to enter the URL and filename.
 
 ## Requirements
 
-- Python 3.x
-- urllib3 library
+- **Python 3.12+**
+- **Node.js & npm** (for Web Interface)
 
 ## Project Structure
 
 ```
 image-downloader/
-├── main.py              # Main program file
-├── downloads/           # Directory where downloaded files are saved
-└── README.md           # This documentation file
+├── backend/             # FastAPI backend application
+│   ├── app.py          # API endpoints
+│   └── downloader.py   # Core downloading logic
+├── frontend/            # Vue.js frontend application
+│   ├── src/            # Vue source files
+│   └── package.json    # Frontend dependencies
+├── main.py              # CLI entry point
+└── README.md           # Documentation
 ```
 
 ## Implementation Details
 
-The project uses the `urllib3` library to handle HTTP requests and automatically detects file types using the Content-Type header from the server response. This ensures that files are saved with their correct extensions, making the tool versatile for downloading various types of files.
-
-## Special Thanks
-
-This project was inspired by a problem statement from Daily Python Projects (dailypythonprojects@substack.com). Their daily Python project challenges provide excellent opportunities for learning and practicing Python programming.
+- **Backend**: Built with FastAPI. Uses `urllib3` for robust HTTP requests.
+- **Frontend**: Built with Vue 3, Vite, and PrimeVue.
+- **CLI**: Interactive Python script.
