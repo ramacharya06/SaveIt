@@ -50,14 +50,14 @@ const downloadImage = async () => {
 </script>
 
 <template>
-  <div class = "flex justify-center align-items-center min-h-screen bg-gray-100">
-    <Card style="width: 25rem; overflow: hidden; margin: 2rem"> 
-      <template #title>
+  <div class = "flex justify-center align-items-center">
+    <Card style="width: 25rem; overflow: hidden;" class="border-2 border-neutral-400"> 
+      <!-- <template #title>
         <div class="flex flex-column align-items-center gap-2">
             <img src="" alt="Save It Logo" style="width: 50px; height: 50px; background-color: #eee; border-radius: 50%;" />
             <span>Save It</span>
         </div>
-      </template>
+      </template> -->
       <template #subtitile>Enter URL and Filename</template>
       <template #content>
         <div class="flex flex-column gap-3">
